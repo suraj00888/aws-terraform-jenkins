@@ -1,3 +1,6 @@
+provider "aws" {
+  region = var.aws_region
+}
 
 
 # 1. EC2 Instance
