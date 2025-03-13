@@ -15,7 +15,7 @@ variable "instance_type" {
 
 variable "bucket_name" {
   description = "Name of the S3 bucket"
-  default     = "s3-bucket-name-123" # Replace with a unique bucket name
+  default     = "s3-bucket-6363-6639" # Replace with a unique bucket name
 }
 
 variable "db_identifier" {
