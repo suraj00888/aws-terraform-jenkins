@@ -18,7 +18,7 @@ resource "aws_instance" "example" {
 
 # 2. S3 Bucket
 resource "aws_s3_bucket" "example" {
-  bucket = "my-terraform-bucket"  # Change this to your unique bucket name
+  bucket = "s3-bucket-6363-6639"  # Change this to your unique bucket name
   acl    = "private"               # Optional: Change ACL as needed
 }
 # 3. RDS MySQL Database
