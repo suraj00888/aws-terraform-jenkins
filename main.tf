@@ -1,6 +1,4 @@
-provider "aws" {
-  region = var.aws_region
-}
+
 
 # 1. EC2 Instance
 resource "aws_instance" "example" {
