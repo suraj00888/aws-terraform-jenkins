@@ -17,21 +17,10 @@ resource "aws_instance" "example" {
 }
 
 # 2. S3 Bucket
-resource "aws_s3_bucket_policy" "example" {
-  bucket = aws_s3_bucket.example.id
-  policy = jsonencode({
-    Version = "2012-10-17"
-    Statement = [
-      {
-        Effect = "Allow"
-        Principal = "*"
-        Action = "s3:GetObject"
-        Resource = "${aws_s3_bucket.example.arn}/*"
-      }
-    ]
-  })
+resource "aws_s3_bucket" "example" {
+  bucket = "my-terraform-bucket"  # Change this to your unique bucket name
+  acl    = "private"               # Optional: Change ACL as needed
 }
-
 # 3. RDS MySQL Database
 resource "aws_db_instance" "example" {
   identifier           = var.db_identifier
