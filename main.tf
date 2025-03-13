@@ -18,9 +18,14 @@ resource "aws_instance" "example" {
 
 # 2. S3 Bucket
 resource "aws_s3_bucket" "example" {
-  bucket = "s3-bucket-6363-6639"  # Change this to your unique bucket name
-  acl    = "private"               # Optional: Change ACL as needed
+  bucket = "s3-bucket-6363-6639"
 }
+
+resource "aws_s3_bucket_acl" "example_acl" {
+  bucket = aws_s3_bucket.example.id
+  acl    = "private"
+}
+
 # 3. RDS MySQL Database
 resource "aws_db_instance" "example" {
   identifier           = var.db_identifier
