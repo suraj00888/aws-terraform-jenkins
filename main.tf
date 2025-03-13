@@ -19,11 +19,15 @@ resource "aws_instance" "example" {
 # 2. S3 Bucket
 resource "aws_s3_bucket" "example" {
   bucket = var.bucket_name
-  acl    = "private"
 
   tags = {
     Name = "example-bucket"
   }
+}
+
+resource "aws_s3_bucket_acl" "example" {
+  bucket = aws_s3_bucket.example.id
+  acl    = "private"
 }
 
 # 3. RDS MySQL Database
